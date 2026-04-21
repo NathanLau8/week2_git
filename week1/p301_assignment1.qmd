@@ -22,7 +22,7 @@ United States Forest Service data of an experimental watershed in Southern Calif
 # Clear the environment
 rm(list=ls())
 
-# Libraries
+# Load packages
 library(tidyverse)
 library(here)
 library(ggplot2)
@@ -34,7 +34,7 @@ library(lubridate)
 Import the p301.csv data into a dataframe.
 
 ```{r}
-# Read csv
+# Read csv and make dates usable
 p301 <- read.csv(here("data","p301.csv")) |>
   mutate(month = as.numeric(month)) |>
   mutate(year = as.numeric(year)) |>
@@ -45,7 +45,7 @@ p301 <- read.csv(here("data","p301.csv")) |>
 ## Plot 1 - Scatterplot - Direct solar vs. transpiration
 
 ```{r}
-# Create a scatterplot with colors
+# Create a scatterplot with colors using ggplot
 scatterplot1 <- ggplot(p301, aes(x = direct_solar, 
                                  y = transpiration, 
                                  color = month)) +
