@@ -18,4 +18,4 @@ p301_yearly <- p301 %>%
 # calculate mean, range and standard deviation of percent streamflow across year
 mean(p301_yearly$percent_streamflow)
 range(p301_yearly$percent_streamflow)
-std(p301_yearly$percent_streamflow)
+stdev(p301_yearly$percent_streamflow)
